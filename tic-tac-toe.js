@@ -28,3 +28,19 @@ document.addEventListener("click", (event) => {
 	cell.innerHTML = symbol;
 	changePlayer();
 });
+
+
+document.addEventListener("mouseover", (event) => {
+	const cell = event.srcElement;
+	if(!cell.getAttribute("is_cell")) return;
+
+	cell.classList.add("hover");
+});
+
+
+document.addEventListener("mouseout", (event) => {
+	const cell = event.srcElement;
+	if(!cell.getAttribute("is_cell")) return;
+
+	cell.classList.remove("hover");
+});
