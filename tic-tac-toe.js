@@ -19,3 +19,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		cells[i].setAttribute("is_cell", true);
 	}	
 });
+
+document.addEventListener("click", (event) => {
+	const cell = event.srcElement;
+	if(!cell.getAttribute("is_cell")) return;
+
+	const symbol = getPlayerSymbol(currentPlayer);
+	cell.innerHTML = symbol;
+	changePlayer();
+});
