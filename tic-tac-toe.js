@@ -74,6 +74,9 @@ function resetGame(event) {
 
 		boardCells[i].classList.remove("hover");
 		boardCells[i].classList.remove("hover.O");
+
+		// boardCells[i].classList.remove("square.X");
+		// boardCells[i].classList.remove("square.O");
 		
 		boardCells[i].setAttribute("is_cell", true);
 	}
@@ -105,6 +108,10 @@ document.addEventListener("click", (event) => {
 	if(!cell.getAttribute("is_cell") || gameOver) return;
 
 	const symbol = getPlayerSymbol(currentPlayer);
+
+	// if(symbol === "X") cell.classList.add("square.X");
+	// if(symbol === "O") cell.classList.add("square.O");
+		
 	cell.innerHTML = symbol;
 	activeSlots--;
 	
